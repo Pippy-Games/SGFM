@@ -1,0 +1,86 @@
+C:\Users\Administrator\Desktop\生光文件\
+│
+├── compat.py                          # Qt 兼容层（PySide2 / PySide6 自动切换）
+├── make_icon.py                       # 图标生成脚本（Pillow 绘制 5 个 .ico）
+├── install.bat                        # 一键安装依赖（内嵌 requirements）
+├── SGMF关联工具.bat                    # 文件关联一体化工具（交互式菜单）
+│
+├── assets/                            # 全局图标资源
+│   ├── icon.ico                       # 主图标（紫色 SG）
+│   ├── icon_audio.ico                 # 音频类型图标（黄色 ♪）
+│   ├── icon_video.ico                 # 视频类型图标（红色 ▶）
+│   ├── icon_text.ico                  # 文本类型图标（绿色 T）
+│   └── icon_image.ico                 # 图片类型图标（蓝色 ◨）
+│
+├── common/                            # 公共模块
+│   ├── __init__.py
+│   └── startup_auth.py                # 启动密码验证（sg123）
+│
+├── sgmf_core/                         # 【核心库】文件格式 + 加密（无 UI 依赖）
+│   ├── __init__.py                    # 统一导出所有公共 API
+│   ├── constants.py                   # Magic/版本/PayloadType/扩展名映射
+│   ├── crypto.py                      # AES-256-CBC + PBKDF2-HMAC-SHA256
+│   ├── format.py                      # SGMF 容器读写（write/read/convert）
+│   └── utils.py                       # SHA-256、文件大小格式化、路径工具
+│
+├── converter/                         # 【转换器应用】
+│   ├── __init__.py
+│   ├── main.py                        # 程序入口
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── main_window.py             # 主窗口 + 拖入区 + 文件列表
+│   │   ├── password_dialog.py         # 密码设置对话框
+│   │   └── styles.qss                 # 深色主题样式
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── transcoder.py              # 单文件转换逻辑
+│   │   └── batch.py                   # 后台批量线程（QThread）
+│   └── assets/                        # （可选）转换器专属图标
+│
+├── player/                            # 【播放器应用】
+│   ├── __init__.py
+│   ├── main.py                        # 程序入口（含 FFmpeg 自动加载）
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── main_window.py             # 主窗口 + 拖入区 + 页面栈
+│   │   ├── audio_widget.py            # 音频播放界面
+│   │   ├── video_widget.py            # 视频播放界面（含全屏 + 浮动控制栏）
+│   │   ├── image_widget.py            # 图片显示界面
+│   │   ├── text_widget.py             # 文本显示界面
+│   │   ├── password_dialog.py         # 密码输入对话框
+│   │   └── styles.qss                 # 深色主题样式
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── dispatcher.py              # 解密 + 内容魔数识别 + 分派
+│   │   ├── audio_player.py            # pydub + sounddevice 播放引擎
+│   │   ├── video_player.py            # python-vlc 封装
+│   │   ├── image_viewer.py            # Pillow → QPixmap
+│   │   └── text_viewer.py             # 编码自动探测
+│   └── assets/                        # （可选）播放器专属图标
+│
+├── installer/                         # 【文件关联模块】
+│   ├── __init__.py
+│   ├── register.py                    # 注册表读写（register/unregister/check）
+│   ├── cli.py                         # 命令行入口
+│   ├── README.md
+│   └── assets/                        # （回退用图标目录）
+│
+├── build/                             # 【打包脚本】
+│   ├── build_player.py                # PyInstaller 打包播放器
+│   ├── build_converter.py             # PyInstaller 打包转换器
+│   ├── build_all.py                   # 一次打包两个
+│   ├── clean.py                       # 清理中间产物
+│   └── README.md
+│
+├── tools/                             # 【第三方工具】（install.bat 自动创建）
+│   └── ffmpeg/
+│       └── bin/
+│           ├── ffmpeg.exe             # 音频解码后端
+│           ├── ffplay.exe
+│           └── ffprobe.exe
+│
+├── dist/                              # 【打包产物】（build_all.py 生成）
+│   ├── SGMFPlayer.exe                 # 播放器 exe（≈60-70 MB）
+│   └── SGMFConverter.exe              # 转换器 exe（≈40-50 MB）
+│
+└── .venv/                             # （可选）虚拟环境

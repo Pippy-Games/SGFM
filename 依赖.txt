@@ -1,0 +1,45 @@
+Windows 7 兼容（Python 3.8）
+txt
+
+# ---- UI ----
+PySide2==5.15.2
+
+# ---- 加密核心 ----
+cryptography>=41.0.0
+
+# ---- 音频 ----
+pydub>=0.25.1
+sounddevice>=0.4.6
+numpy>=1.24.0,<2.0
+
+# ---- 视频 ----
+python-vlc>=3.0.18
+
+# ---- 图片 ----
+Pillow>=9.5.0
+
+# ---- 打包 ----
+pyinstaller==5.1
+
+Windows 10/11（Python 3.8~3.12）
+txt
+
+# ---- UI ----
+PySide6==6.1.*
+
+# ---- 加密核心 ----
+cryptography>=41.0.0
+
+# ---- 音频 ----
+pydub>=0.25.1
+sounddevice>=0.4.6
+numpy>=1.24.0
+
+# ---- 视频 ----
+python-vlc>=3.0.18
+
+# ---- 图片 ----
+Pillow>=10.0.0
+
+# ---- 打包 ----
+pyinstaller>=6.0

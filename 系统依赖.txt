@@ -1,0 +1,6 @@
+四、系统级依赖（非 pip 安装）
+组件	版本要求	用途	安装方式
+Python	3.8（Win7）/ 3.8~3.12（Win10/11）	运行时	python.org
+FFmpeg	任意 4.x+	pydub 音频解码后端	放入 tools/ffmpeg/bin/
+VLC	3.x（64 位）	python-vlc 运行时	videolan.org
+VC++ Redistributable	2015-2022	Qt 依赖	aka.ms/vs/17/release/vc_redist.x64.exe
