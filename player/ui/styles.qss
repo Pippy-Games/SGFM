@@ -1,0 +1,296 @@
+/* ============================================================
+   SGMF 播放器 — 深色主题
+   ============================================================ */
+
+* {
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+QMainWindow, QWidget {
+    background-color: #1E1E2E;
+    color: #CDD6F4;
+    font-size: 13px;
+}
+
+QDialog {
+    background-color: #1E1E2E;
+}
+
+/* ---------- 标题 ---------- */
+QLabel#AppTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #CDD6F4;
+}
+
+QLabel#MediaTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #CDD6F4;
+}
+
+QLabel#MediaSubtitle {
+    font-size: 12px;
+    color: #7F849C;
+}
+
+QLabel#MediaIcon {
+    font-size: 96px;
+    color: #7C5CFC;
+}
+
+QLabel#TimeLabel {
+    font-size: 12px;
+    color: #A6ADC8;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+QLabel#FieldLabel {
+    color: #A6ADC8;
+    font-size: 13px;
+}
+
+QLabel#DialogHint {
+    color: #A6ADC8;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ---------- 拖入区 ---------- */
+QFrame#DropArea {
+    background-color: #2A2A3C;
+    border: 2px dashed #45475A;
+    border-radius: 12px;
+}
+
+QFrame#DropArea:hover {
+    background-color: #2F2F44;
+    border-color: #585B70;
+}
+
+QFrame#DropArea[dragActive="true"] {
+    background-color: #353550;
+    border-color: #7C5CFC;
+}
+
+QLabel#DropIcon {
+    font-size: 48px;
+    color: #7C5CFC;
+    font-weight: bold;
+}
+
+QLabel#DropTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #CDD6F4;
+    margin-top: 4px;
+}
+
+QLabel#DropHint {
+    font-size: 12px;
+    color: #7F849C;
+    margin-top: 4px;
+}
+
+/* ---------- 输入框 ---------- */
+QLineEdit {
+    background-color: #2A2A3C;
+    border: 1px solid #45475A;
+    border-radius: 8px;
+    padding: 6px 10px;
+    color: #CDD6F4;
+    selection-background-color: #7C5CFC;
+    selection-color: #FFFFFF;
+}
+
+QLineEdit:focus {
+    border-color: #7C5CFC;
+}
+
+/* ---------- 按钮 ---------- */
+QPushButton {
+    background-color: #45475A;
+    color: #CDD6F4;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 13px;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: #585B70;
+}
+
+QPushButton:pressed {
+    background-color: #3A3C4E;
+}
+
+QPushButton#PrimaryButton {
+    background-color: #7C5CFC;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 10px 24px;
+}
+
+QPushButton#PrimaryButton:hover {
+    background-color: #9B7FFF;
+}
+
+QPushButton#PrimaryButton:pressed {
+    background-color: #6A4BE0;
+}
+
+QPushButton#GhostButton {
+    background-color: transparent;
+    border: 1px solid #45475A;
+    color: #CDD6F4;
+}
+
+QPushButton#GhostButton:hover {
+    background-color: #2A2A3C;
+    border-color: #585B70;
+}
+
+/* ---------- 滑块 ---------- */
+QSlider::groove:horizontal {
+    height: 6px;
+    background: #313244;
+    border-radius: 3px;
+}
+
+QSlider::sub-page:horizontal {
+    background: #7C5CFC;
+    border-radius: 3px;
+}
+
+QSlider::add-page:horizontal {
+    background: #313244;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #CDD6F4;
+    width: 14px;
+    height: 14px;
+    margin: -4px 0;
+    border-radius: 7px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #FFFFFF;
+}
+
+/* ---------- 文本区 ---------- */
+QTextEdit#TextEditor {
+    background-color: #2A2A3C;
+    border: 1px solid #313244;
+    border-radius: 10px;
+    padding: 12px;
+    color: #CDD6F4;
+    font-family: "Consolas", "Microsoft YaHei", monospace;
+    font-size: 13px;
+}
+
+/* ---------- 图片滚动区 ---------- */
+QScrollArea#ImageScroll {
+    background-color: #181825;
+    border: 1px solid #313244;
+    border-radius: 10px;
+}
+
+QLabel#ImageView {
+    background-color: transparent;
+}
+
+/* ---------- 消息框 ---------- */
+QMessageBox {
+    background-color: #1E1E2E;
+}
+
+QMessageBox QLabel {
+    color: #CDD6F4;
+    font-size: 13px;
+}
+
+QMessageBox QPushButton {
+    min-width: 80px;
+}
+
+/* ---------- 滚动条 ---------- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 4px 2px;
+}
+
+QScrollBar::handle:vertical {
+    background: #45475A;
+    border-radius: 5px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #585B70;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical,
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: transparent;
+    height: 0;
+    border: none;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 10px;
+    margin: 2px 4px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #45475A;
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #585B70;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal,
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: transparent;
+    width: 0;
+    border: none;
+}
+
+/* ---------- 工具提示 ---------- */
+QToolTip {
+    background-color: #313244;
+    color: #CDD6F4;
+    border: 1px solid #45475A;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+/* ---------- 启动验证对话框 ---------- */
+QLabel#AuthTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #CDD6F4;
+}
+
+QLabel#AuthHint {
+    font-size: 13px;
+    color: #A6ADC8;
+}
+/* ---------- 视频画面 ---------- */
+QFrame#VideoFrame {
+    background-color: black;
+    border: none;
+    border-radius: 6px;
+}
